@@ -6,7 +6,7 @@
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 10:25:29 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/05 15:03:01 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:44:15 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,10 @@ added to the list.
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	// t_list	*last;
-
 	if (!lst || !new)
 		return ;
 	if (*lst == NULL)
 		*lst = new;
 	else
-	{
 		ft_lstlast(*lst)->next = new;
-		// last = ft_lstlast(*lst);
-		// last->next = new;
-	}
 }

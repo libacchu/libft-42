@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 15:06:19 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 10:03:11 by libacchu         ###   ########.fr       */
+/*   Created: 2022/04/06 09:48:58 by libacchu          #+#    #+#             */
+/*   Updated: 2022/04/06 10:40:03 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,27 @@
 
 /*
 Iterates the list ’lst’ and applies the function
-’f’ on the content of each node.
+’f’ on the content of each node. Creates a new
+list resulting of the successive applications of
+the function ’f’. The ’del’ function is used to
+delete the content of a node if needed.
+Returns the new list. NULL if the allocation fails.
 lst: The address of a pointer to a node.
 f: The address of the function used to iterate on
 the list.
+del: The address of the function used to delete
+the content of a node if needed.
 */
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst || !f)
-		return ;
+	t_list	*new;
+
+	if (!lst || !f || !del)
+		return (NULL);
 	while (lst)
 	{
-		f(lst->content);
-		lst = lst->next;
+		
+		ft_lstiter(lst, f);
 	}
 }

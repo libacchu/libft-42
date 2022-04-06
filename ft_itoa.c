@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 19:43:59 by libacchu          #+#    #+#             */
-/*   Updated: 2022/01/20 09:36:09 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:59:21 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Allocates (with malloc(3)) and returns a string
+representing the integer received as an argument.
+Negative numbers must be handled.
+n: the integer to convert.
+Returns the string representing the integer.
+NULL if the allocation fails.
+*/
 unsigned long int	ft_numlen(long int n)
 {
 	unsigned long int	len;

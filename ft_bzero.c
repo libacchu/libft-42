@@ -6,7 +6,7 @@
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 12:20:31 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/05 09:54:51 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:46:35 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 The bzero() function writes n zeroed bytes to the string s.
-If n is zero, bzero() does nothing.
+		If n is zero, bzero() does nothing.
 */
 void	ft_bzero(void *s, size_t n)
 {

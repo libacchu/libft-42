@@ -6,7 +6,7 @@
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:40:26 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/05 14:50:46 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:33:08 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,17 @@ the content of the node.
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!*lst)
+	t_list	*temp;
+
+	if (!*lst || !del)
 		return ;
 	while (*lst)
 	{
-		del(*lst);
-		*lst++;
+		temp = *lst;
+		del(temp->content);
+		temp = temp->next;
+		free(*lst);
+		*lst = temp;
 	}
-	free(*lst);
+	*lst = NULL;
 }

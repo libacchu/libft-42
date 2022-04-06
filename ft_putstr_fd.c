@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:08:49 by libacchu          #+#    #+#             */
-/*   Updated: 2022/01/12 19:52:18 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/06 11:08:06 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+Outputs the string ’s’ to the given file
+descriptor.
+*/
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
