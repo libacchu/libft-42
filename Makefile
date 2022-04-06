@@ -6,7 +6,7 @@
 #    By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 09:34:05 by libacchu          #+#    #+#              #
-#    Updated: 2022/04/05 15:01:33 by libacchu         ###   ########.fr        #
+#    Updated: 2022/04/06 12:31:10 by libacchu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJS = $(FUNCTIONS:.c=.o)
 
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-		
+		ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 BONUS_OBJS = $(BONUS:.c=.o)
 

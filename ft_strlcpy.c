@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:13:48 by libacchu          #+#    #+#             */
-/*   Updated: 2022/01/21 13:40:42 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/06 11:56:26 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+strlcpy() copies up to dstsize - 1 characters from the string src to dst,
+     NUL-terminating the result if dstsize is not 0.
+*/
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

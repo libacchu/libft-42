@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 19:40:04 by libacchu          #+#    #+#             */
-/*   Updated: 2022/01/20 11:29:06 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/06 11:45:49 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ size_t	ft_letter_count(const char *s, char c, size_t start)
 	return (i);
 }
 
+/*
+Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter. The array must end
+with a NULL pointer.
+*/
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
