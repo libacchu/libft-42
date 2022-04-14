@@ -6,20 +6,27 @@
 #    By: libacchu <libacchu@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 09:34:05 by libacchu          #+#    #+#              #
-#    Updated: 2022/04/14 12:05:38 by libacchu         ###   ########.fr        #
+#    Updated: 2022/04/14 23:29:34 by libacchu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FUNCTIONS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+FUNCTIONS_P1 = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
             ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
             ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
             ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
             ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
             ft_strtrim.c ft_itoa.c ft_strmapi.c ft_striteri.c \
             ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-            ft_split.c get_next_line.c
+            ft_split.c 
 
-OBJS = $(FUNCTIONS:.c=.o)
+GNL = get_next_line.c
+
+PRINTF = ft_printchar.c ft_printdecimal.c ft_printf.c \
+			ft_printhex.c ft_printstr.c
+
+PERSONAL = ft_numlen.c
+
+OBJS = $(FUNCTIONS_P1:.c=.o) $(GNL:.c=.o) $(PERSONAL:.c=.o) $(PRINTF:.c=.o)
 
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
@@ -36,7 +43,7 @@ AR = ar
 ARFLAGS = rcs
 
 $(NAME):
-	@$(CC) -c $(CFLAGS) $(FUNCTIONS)
+	@$(CC) -c $(CFLAGS) $(FUNCTIONS_P1) $(GNL) $(PERSONAL) $(PRINTF)
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	
 all: $(NAME)

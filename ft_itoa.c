@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 19:43:59 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 10:59:21 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/14 23:31:44 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ n: the integer to convert.
 Returns the string representing the integer.
 NULL if the allocation fails.
 */
-unsigned long int	ft_numlen(long int n)
+static unsigned long int	ft_nbrlen(long int n)
 {
 	unsigned long int	len;
 
@@ -79,7 +79,7 @@ char	*ft_itoa(int n)
 	long int	num;
 
 	num = n;
-	len = ft_numlen(n);
+	len = ft_nbrlen(n);
 	if (num < 0)
 		return (ft_numstrneg(num, len));
 	else
