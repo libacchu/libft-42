@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 11:44:09 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 12:46:10 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/14 11:40:01 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 # include <stddef.h>
 # include <string.h>
 # include <stdlib.h>
+# include <fcntl.h>
 # include <stdio.h>
 # include <unistd.h>
 

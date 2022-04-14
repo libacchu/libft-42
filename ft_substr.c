@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 21:10:10 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 13:08:06 by libacchu         ###   ########.fr       */
+/*   Updated: 2022/04/14 11:17:52 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if ((ft_strlen(s + start)) < len)
 		len = ft_strlen(s + start);
-	ptr = (char *)malloc((len + 1) * sizeof(char));
+	ptr = (char *)malloc((len + 1) * sizeof(ptr));
 	if (!ptr)
 		return (NULL);
 	count = 0;
