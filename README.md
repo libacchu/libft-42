@@ -39,3 +39,7 @@ In order to implement the two following functions, you will use malloc():
 
 • calloc
 • strdup
+
+## Added
+• ft_printf
+• get_next_line
