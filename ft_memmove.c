@@ -6,7 +6,7 @@
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 08:55:24 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 11:05:03 by libacchu         ###   ########.fr       */
+/*   Updated: 2023/04/06 00:38:09 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*ptr_dst;
 	char	*ptr_src;
 
+	if (!dst && !src)
+		return (NULL);
 	ptr_dst = (char *)dst;
 	ptr_src = (char *)src;
 	if (ptr_dst < ptr_src)

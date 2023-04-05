@@ -6,7 +6,7 @@
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:51:44 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 11:03:53 by libacchu         ###   ########.fr       */
+/*   Updated: 2023/04/06 00:38:25 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*ptr_dst;
 	unsigned char	*ptr_src;
 
+	if (!dst && !src)
+		return (NULL);
 	ptr_dst = (unsigned char *)dst;
 	ptr_src = (unsigned char *)src;
 	i = 0;
