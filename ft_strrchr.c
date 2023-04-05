@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: popos <popos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:31:50 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 11:50:13 by libacchu         ###   ########.fr       */
+/*   Updated: 2023/04/05 23:16:08 by popos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,15 @@ The functions strchr() and strrchr() return a pointer to the located charac-
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*str;
+	int	i;
 
-	str = (char *)s;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (str[i] == (char)c)
-			return (&str[i]);
+		if (s[i] == (char)c)
+			return ((char *)s + i);
 		i--;
 	}
 	return (NULL);
 }
+
