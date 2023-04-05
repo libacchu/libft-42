@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: popos <popos@student.42.fr>                +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:31:50 by libacchu          #+#    #+#             */
-/*   Updated: 2023/04/05 23:16:08 by popos            ###   ########.fr       */
+/*   Updated: 2023/04/05 23:23:26 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
