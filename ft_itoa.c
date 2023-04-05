@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: libacchu <libacchu@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 19:43:59 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/14 23:31:44 by libacchu         ###   ########.fr       */
+/*   Updated: 2023/04/06 00:31:44 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*ft_numstrpos(long int num, size_t len)
 	size_t	i;
 
 	ptr = (char *) malloc((len + 1) * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
 	i = len - 1;
 	while (i > 0)
 	{
@@ -61,6 +63,8 @@ char	*ft_numstrneg(long int num, size_t len)
 	len++;
 	num *= -1;
 	ptr = (char *) malloc((len + 1) * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
 	ptr[0] = '-';
 	i = len - 1;
 	while (i > 0)
