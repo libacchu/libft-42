@@ -6,7 +6,7 @@
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 19:40:04 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 11:45:49 by libacchu         ###   ########.fr       */
+/*   Updated: 2023/04/06 00:53:41 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,12 @@ char	**ft_split(char const *s, char c)
 			i++;
 		len = ft_letter_count(s, c, i);
 		ptr[j] = ft_substr(s, i, len);
+		if (!ptr[j])
+		{
+			while (j--)
+				free(ptr[j]);
+			return (free(ptr), NULL);
+		}
 		j++;
 		i += len;
 		s++;
