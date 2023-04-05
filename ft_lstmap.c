@@ -6,7 +6,7 @@
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:48:58 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 12:57:09 by libacchu         ###   ########.fr       */
+/*   Updated: 2023/04/06 01:36:15 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,37 +26,22 @@ del: The address of the function used to delete
 the content of a node if needed.
 */
 
-// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-// {
-// 	t_list	*new;
-// 	void	*func;
-
-// 	if (!lst || !f || !del)
-// 		return (NULL);
-// 	new = lst;
-// 	if (!new)
-// 	{
-// 		ft_lstclear(&new, del);
-// 		return (NULL);
-// 	}
-// 	func = f;
-// 	ft_lstiter(new, func);
-// 	return (new);
-// }
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*new_node;
+	void	*func;
 
 	if (!lst || !f || !del)
 		return (NULL);
 	new = NULL;
 	while (lst)
 	{
-		new_node = ft_lstnew(f(lst->content));
+		func = f(lst->content);
+		new_node = ft_lstnew(func);
 		if (!new_node)
 		{
+			del(func);
 			ft_lstclear(&new, del);
 			return (NULL);
 		}
