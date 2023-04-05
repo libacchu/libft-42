@@ -3,14 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: popos <popos@student.42.fr>                +#+  +:+       +#+         #
+#    By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/01 09:34:05 by libacchu          #+#    #+#              #
-#    Updated: 2023/04/05 23:11:04 by popos            ###   ########.fr        #
+#    Created: 2023/04/05 23:47:35 by libacchu          #+#    #+#              #
+#    Updated: 2023/04/06 00:08:47 by libacchu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+NAME        := libft.a
+CC        := gcc
+FLAGS    := -Wall -Wextra -Werror 
+AR        := ar rcs
+
+SRCS        :=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
             ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
             ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
             ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
@@ -18,37 +23,45 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
             ft_strtrim.c ft_itoa.c ft_strmapi.c ft_striteri.c \
             ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
             ft_split.c 
+                          
+OBJS        := $(SRCS:.c=.o)
 
-
-OBJS = $(SRC:.c=.o)
-
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+BONUS 	:= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 		ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 BONUS_OBJS = $(BONUS:.c=.o)
 
-NAME = libft.a
+.c.o:
+	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-RM = rm -f
-AR = ar
-ARFLAGS = rcs
+CLR_RMV		:= \033[0m
+RED		    := \033[1;31m
+GREEN		:= \033[1;32m
+YELLOW		:= \033[1;33m
+BLUE		:= \033[1;34m
+CYAN 		:= \033[1;36m
+RM		    := rm -f
 
-$(NAME): $(OBJS)
-	@$(CC) -c $(CFLAGS) $(SRC)
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	
-all: $(NAME)
-	
+${NAME}:	${OBJS}
+			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
+			$(CC) -c $(FLAGS) $(SRCS)
+			$(AR) $(NAME) $(OBJS)
+			@echo "$(GREEN)$(NAME) created[0m ✔️"
+
+all:		${NAME}
+
+bonus:		${OBJS} ${BONUS_OBJS}
+			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
+			$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+			@echo "$(GREEN)$(NAME) created[0m ✔️"
+			
 clean:
-	@$(RM) $(OBJS) $(BONUS_OBJS)
+			@ ${RM} *.o */*.o */*/*.o
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
 
-fclean: clean 
-	@$(RM) $(NAME)
+fclean:		clean
+			@ ${RM} ${NAME}
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 
-re: fclean $(NAME)
-
-bonus: $(OBJS) $(BONUS_OBJS)
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
+re:			fclean all

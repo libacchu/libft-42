@@ -6,7 +6,7 @@
 /*   By: libacchu <libacchu@students.42wolfsburg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:34:13 by libacchu          #+#    #+#             */
-/*   Updated: 2022/04/06 11:00:41 by libacchu         ###   ########.fr       */
+/*   Updated: 2023/04/06 00:36:49 by libacchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*ptr;
 
 	ptr = (unsigned char *)s;
-	if (!s)
-		return (NULL);
+	// if (!s)
+	// 	return (NULL);
 	i = 0;
 	while (i < n)
 	{
